@@ -572,13 +572,13 @@ def loginoperation() :
 with st.sidebar:
         selected = option_menu(None, ["Sign-In", "Sign-Up", "Upload data", "---", "Model", 'Recon-query' , 'Recon-projection'  , 'Logout'], 
         icons=['person', 'door-open', 'cloud-upload', None, "list-task", 'bar-chart', 'bar-chart','door-closed'], 
-        menu_icon="cast", default_index=0 
-        # styles={
-        #     "container": {"padding": "0!important", "background-color": "#eee"},
-        #     "icon": {"color": "orange", "font-size": "25px"}, 
-        #     "nav-link": {"font-size": "15px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        #     "nav-link-selected": {"background-color": "blue"},
-        # }
+        menu_icon="cast", default_index=0 ,
+        styles={
+             "container": {"padding": "0!important", "background-color": "#eee"},
+             "icon": {"color": "orange", "font-size": "25px"}, 
+             "nav-link": {"font-size": "15px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+             "nav-link-selected": {"background-color": "blue"},
+         }
         
         )
 
