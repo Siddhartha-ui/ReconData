@@ -263,39 +263,39 @@ def populatefromDuckDBForProjection():
                             # # storing dtype before operation
                             # dtype_before = type(df["Partner"])
 
-                            # # converting to list
-                            # partnerlist = df["Partner"].tolist()
-                            # Tranchelist = df["Tranche"].tolist()
-                            # begincap = df["BeginCapital"].tolist()
-                            # opcontrib = df["opContribution"].tolist()
-                            # opwithdraw = df["opWithdraw"].tolist()
-                            # pl = dbop.getpl('pl')
+                            # converting to list
+                            partnerlist = df["Partner"].tolist()
+                            Tranchelist = df["Tranche"].tolist()
+                            begincap = df["BeginCapital"].tolist()
+                            opcontrib = df["opContribution"].tolist()
+                            opwithdraw = df["opWithdraw"].tolist()
+                            pl = dbop.getpl('pl')
 
-                            # st.dataframe(pl,hide_index= True,use_container_width= True)
+                            st.dataframe(pl,hide_index= True,use_container_width= True)
 
-                            # pl_list = pl["Value"].tolist()
-                            # bucket_cols = pl["bucket"].to_list()
+                            pl_list = pl["Value"].tolist()
+                            bucket_cols = pl["bucket"].to_list()
                             
                             # #spreadsheet(st.session_state.dataset)
 
-                            # #if st.button("calculate") :
-                            # cols = ["Partner Name" , "Tranch Name", "Begin Cap", "Op Contribition", "Op Withdraw", "Adjusted Capital", "ep", "Book Income"]
-                            # for i in bucket_cols :
-                            #     cols.append(i)
+                            #if st.button("calculate") :
+                            cols = ["Partner Name" , "Tranch Name", "Begin Cap", "Op Contribition", "Op Withdraw", "Adjusted Capital", "ep", "Book Income"]
+                            for i in bucket_cols :
+                                cols.append(i)
 
-                            # cols.append("GAV")
+                            cols.append("GAV")
 
                             
                                                         
-                            # book_ep = Allocation(partnerlist, Tranchelist, begincap,opcontrib,opwithdraw,pl_list,rule = 1)           
-                            # d = pd.DataFrame(book_ep.allocate(),columns= cols)
-                            # #d = pd.DataFrame(x.allocate())
+                            book_ep = Allocation(partnerlist, Tranchelist, begincap,opcontrib,opwithdraw,pl_list,rule = 1)           
+                            d = pd.DataFrame(book_ep.allocate(),columns= cols)
+                            #d = pd.DataFrame(x.allocate())
                             
-                            # st.dataframe(d.head(100), use_container_width= True, hide_index= True)
+                            st.dataframe(d.head(100), use_container_width= True, hide_index= True)
                             
 
                             # #st.dataframe(st.session_state.dataset.head(100), use_container_width= True)
-                            # download_csv(d)
+                            download_csv(d)
                     # except :
                     #      st.error ("Correct your required expressions")
                 
